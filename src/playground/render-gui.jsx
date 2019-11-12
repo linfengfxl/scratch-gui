@@ -9,7 +9,7 @@ import TitledHOC from '../lib/titled-hoc.jsx';
 import log from '../lib/log.js';
 
 const onClickLogo = () => {
-    window.location = 'https://scratch.mit.edu';
+    //window.location = 'http://192.168.2.95:8601/';
 };
 
 const handleTelemetryModalCancel = () => {
@@ -78,7 +78,7 @@ export default appTarget => {
                 backpackVisible
                 showComingSoon
                 backpackHost={backpackHost}
-                canSave={false}
+                canSave={true}   //控制菜单中的立即保存
                 onClickLogo={onClickLogo}
             />,
         appTarget);
