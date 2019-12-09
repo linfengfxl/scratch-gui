@@ -78,7 +78,7 @@ export default appTarget => {
                 backpackVisible
                 showComingSoon
                 backpackHost={backpackHost}
-                canSave={true}   //控制菜单中的立即保存
+                canSave={false}   //控制菜单中的立即保存
                 onClickLogo={onClickLogo}
             />,
         appTarget);

@@ -7,14 +7,14 @@ export default (filename, blob) => {
         navigator.msSaveOrOpenBlob(blob, filename);
         return;
     }
-    window.URL = window.URL||window.webkitURL;
-    
+
     const url = window.URL.createObjectURL(blob);
-    console.log(url);
     downloadLink.href = url;
     downloadLink.download = filename;
     downloadLink.type = blob.type;
     downloadLink.click();
-    window.URL.revokeObjectURL(url);
-    document.body.removeChild(downloadLink);
+    setTimeout(function(){
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(saveLink);
+    }, 1000);
 };
