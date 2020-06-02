@@ -1,0 +1,38 @@
+1. 编程界面标题
+   . 源码层修改:
+     修改在根目录下 webpack.config.js 文件中如下标记的titile
+     new HtmlWebpackPlugin({
+                  chunks: ['lib.min', 'compatibilitytesting'],
+                  template: 'src/playground/index.ejs',
+                  filename: 'compatibility-testing.html',
+                  title: 'Scratch 3.0 GUI: Compatibility Testing'
+              }),
+     比如:
+     new HtmlWebpackPlugin({
+                  chunks: ['lib.min', 'compatibilitytesting'],
+                  template: 'src/playground/index.ejs',
+                  filename: 'compatibility-testing.html',
+                  title: 'Scratch 3.0 小马编程'
+              }),
+   . 部署文件中修改
+     修改根目录中的index.html 的title标记
+     <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="google" value="notranslate">
+          <link rel="shortcut icon" href="static/favicon.ico">
+          <title>Scratch 3.0 小马编程</title>
+
+        </head>
+        <body>
+        <script type="text/javascript" src="lib.min.js"></script><script type="text/javascript" src="chunks/gui.js"></script></body>
+      </html>
+            
+2. 修改编程界面的图标logo
+   . 源码层修改
+     替换static目录下的 favicon.ico
+     
+   . 部署文件修改
+     替换static目录下的 favicon.ico
