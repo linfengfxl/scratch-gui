@@ -26,6 +26,7 @@ import AuthorInfo from './author-info.jsx';
 import AccountNav from '../../containers/account-nav.jsx';
 import LoginDropdown from './login-dropdown.jsx';
 import SB3Downloader from '../../containers/sb3-downloader.jsx';
+import SB3Save2Server from '../../containers/sb3-save2Server.jsx';
 import DeletionRestorer from '../../containers/deletion-restorer.jsx';
 import TurboMode from '../../containers/turbo-mode.jsx';
 import MenuBarHOC from '../../containers/menu-bar-hoc.jsx';
@@ -421,6 +422,20 @@ class MenuBar extends React.Component {
                                                 />
                                             </MenuItem>
                                         )}</SB3Downloader>
+                                        <SB3Save2Server>{(className,downloadProjectCallback)=>(
+                                            <MenuItem 
+                                                className={className}
+                                                onClick={this.getSaveToComputerHandler(downloadProjectCallback)}
+                                            >
+                                                <FormattedMessage 
+                                                    defaultMessage="保存到服务器"
+                                                    description="将作品保存到服务器"
+                                                    id="gui.menuBar.save2Server"
+                                                />
+                                            </MenuItem>
+
+                                        )}
+                                        </SB3Save2Server>
                                     </MenuSection>
                                 </MenuBarMenu>
                             </div>
